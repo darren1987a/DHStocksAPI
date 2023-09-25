@@ -32,7 +32,7 @@ public struct Quote: Decodable, Identifiable, Hashable {
     public let n: String        // 公司簡稱
     public let nf: String       // 公司全名
     
-    public init(z: String, tv: String, v: String, o: String, h: String, l: String, y: String, u: String, w: String, tlong: String, d: String, t: String, c: String, n: String, nf: String) {
+    public init(z: String = "", tv: String = "", v: String = "", o: String = "", h: String = "", l: String = "", y: String = "", u: String = "", w: String = "", tlong: String = "", d: String = "", t: String = "", c: String = "", n: String = "", nf: String = "") {
         self.z = z
         self.tv = tv
         self.v = v
