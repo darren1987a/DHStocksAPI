@@ -20,12 +20,14 @@ public struct Ticker: Codable, Identifiable, Hashable, Equatable {
     public let name: String
     public let marketCategory: String
     public let industryCategory: String
+    public let queryCode: String
 
-    public init(id: Int = 0, no: String, name: String = "", marketCategory: String = "", industryCategory: String = "") {
+    public init(id: Int = 0, no: String, name: String = "", marketCategory: String = "", industryCategory: String = "", queryCode: String = "") {
         self.id = id
         self.no = no
         self.name = name
         self.marketCategory = marketCategory
         self.industryCategory = industryCategory
+        self.queryCode = queryCode
     }
 }
