@@ -22,13 +22,13 @@ struct DHStocksExec {
             
             // Search Ticker using "TESLA" as Query
             let tickers = try await api
-                .searchTickers(query: "TESLA")
-            //print(tickers)
+                .searchTickers(query: "2330")
+            print(tickers)
             
             // Fetch Quote Detail for multiple symbols
             // AAPL, TSLA, GOOG, MSFT
             let quotes = try await api
-                .fetchQuotes(symbols: "tse_2330.tw")
+                .fetchQuotes(symbols: "tse_2330.tw|tse_2498.tw")
             print(quotes)
             
         } catch {
