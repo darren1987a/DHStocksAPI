@@ -18,17 +18,17 @@ struct DHStocksExec {
             let apple1dChart = try await api
                 .fetchChartData(tickerSymbol: "AAPL", range: .oneDay)
 
-            print(apple1dChart ?? "Not Found")
+            //print(apple1dChart ?? "Not Found")
             
             // Search Ticker using "TESLA" as Query
             let tickers = try await api
                 .searchTickers(query: "TESLA")
-            print(tickers)
+            //print(tickers)
             
             // Fetch Quote Detail for multiple symbols
             // AAPL, TSLA, GOOG, MSFT
             let quotes = try await api
-                .fetchQuotes(symbols: "AAPL,TSLA,GOOG,MSFT")
+                .fetchQuotes(symbols: "tse_2330.tw")
             print(quotes)
             
         } catch {

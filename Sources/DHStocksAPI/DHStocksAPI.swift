@@ -87,7 +87,7 @@ public struct DHStocksAPI: IStocksAPI {
         if let error = resp.error {
             throw APIServiceError.httpStatusCodeFailed(statusCode: statusCode, error: error)
         }
-        return resp.data ?? []
+        return resp.msgArray ?? []
     }
     
     public func fetchQuotesRawData(symbols: String) async throws -> (Data, URLResponse) {
@@ -96,10 +96,10 @@ public struct DHStocksAPI: IStocksAPI {
     }
     
     private func urlForFetchQuotes(symbols: String) -> URL? {
-        guard var urlComp = URLComponents(string: "\(baseURL)/v7/finance/quote") else {
+        guard var urlComp = URLComponents(string: "https://mis.twse.com.tw/stock/api/getStockInfo.jsp") else {
             return nil
         }
-        urlComp.queryItems = [ URLQueryItem(name: "symbols", value: symbols) ]
+        urlComp.queryItems = [ URLQueryItem(name: "ex_ch", value: symbols), URLQueryItem(name: "json", value: "1") ]
         return urlComp.url
     }
     
